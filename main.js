@@ -12,46 +12,33 @@
   let address = document.createElement("h6");
   let DOB = document.createElement("p");
   let since = document.createElement("p");
+  let pic = document.createElement("img");
 
-  // use the data from an object to populate these divs
- 
-  //city.innerText = ray.city;
-  //food.innerText = ray.favFood;
-   
+  customerDiv.appendChild(pic);
   customerDiv.appendChild(name);
   customerDiv.appendChild(email);
   customerDiv.appendChild(address);
   customerDiv.appendChild(DOB);
   customerDiv.appendChild(since);
+  
+
   customerContainer.appendChild(customerDiv);
   
+    pic.src = `${customer.picture.thumbnail}`
     name.innerText = `${customer.name.title} ${customer.name.first} ${customer.name.last}`
+    email.innerText = `${customer.email}`
+    address.innerText = `${customer.location.street.number} ${customer.location.street.name} 
+      ${customer.location.city} ${customer.location.state} ${customer.location.postcode}`
+    DOB.innerText = `${customer.dob.date}`
+    since.innerText = `${customer.registered.date}`
+
 
 
   customerDiv.classList.add("customer");
 
   }
 
-  // add styles to the div using a class
-  
-  // now loop through the array `people`, build a customerDiv for each person, append that to the page
-  
-  /* function buildPeopleGrid(peopleArray) {
-     for (let person of peopleArray) {
-      let customerDiv = document.createElement("div");
-      let personName = document.createElement("h1");
-      let email = document.createElement("h3");
-      let address = document.createElement("h3");
-      let DOB = document.createElement("p");
-      let since = document.createElement("p");
-       // use the data from an object to populate these divs
-       customerDiv.appendChild(personName);
-       customerDiv.appendChild(email);
-       customerDiv.appendChild(address);
-       customerDiv.appendChild(DOB);
-       customerDiv.appendChild(since);
-       peopleContainer.appendChild(customerDiv);
-       customerDiv.classList.add("person");
-    }
-  */
+ 
+
+
   
